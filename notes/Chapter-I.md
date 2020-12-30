@@ -1,4 +1,4 @@
-#  Chapter I - The Money Example
+#  Chapter I - Multi-Currency Money
 
 
 ### TDD Steps

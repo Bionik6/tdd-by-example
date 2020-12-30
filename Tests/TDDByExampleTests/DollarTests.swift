@@ -16,8 +16,8 @@ struct Dollar {
     self.amount = amount
   }
   
-  mutating func times(_ multiplier: Int) {
-    amount *= multiplier
+  mutating func times(_ multiplier: Int) -> Self {
+    Dollar(amount: amount * multiplier)
   }
 }
 
@@ -25,8 +25,11 @@ class DollarTests: XCTestCase {
   
   func testMulitiplication() {
     var five = Dollar(amount: 5)
-    five.times(2)
-    XCTAssertEqual(10, five.amount)
+    var product = five.times(2)
+    _ = five.times(2)
+    XCTAssertEqual(10, product.amount)
+    product = five.times(3)
+    XCTAssertEqual(15, product.amount)
   }
 
 }
